@@ -9,10 +9,13 @@ import { OrbView } from "@/components/views/orb";
 import { JournalView } from "@/components/views/journal";
 import { PlaybooksView } from "@/components/views/playbooks";
 import { SettingsView } from "@/components/views/settings";
+import type { CandidateList } from "@/lib/types";
 
 export default function Home(){
   const [view,setView]=useState<ViewId>("today");
+  const [candidateList,setCandidateList]=useState<CandidateList>("focus-long");
   const navigate=(next:ViewId)=>{setView(next);window.scrollTo(0,0)};
-  const views={ today:<TodayView onNavigate={navigate}/>, awareness:<AwarenessView/>, candidates:<CandidatesView/>, scan:<ScanView/>, orb:<OrbView/>, journal:<JournalView/>, playbooks:<PlaybooksView/>, settings:<SettingsView/> };
+  const openCandidateList=(list:CandidateList)=>{setCandidateList(list);setView("candidates");window.scrollTo(0,0)};
+  const views={ today:<TodayView onNavigate={navigate}/>, awareness:<AwarenessView onOpenList={openCandidateList}/>, candidates:<CandidatesView key={candidateList} initialTab={candidateList}/>, scan:<ScanView/>, orb:<OrbView/>, journal:<JournalView/>, playbooks:<PlaybooksView/>, settings:<SettingsView/> };
   return <AppShell active={view} onNavigate={navigate}>{views[view]}</AppShell>;
 }

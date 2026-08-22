@@ -43,3 +43,13 @@
 .scan-resource>a,.research-source>a{display:grid;place-items:center;border-left:1px solid var(--line);color:var(--cyan-bright);text-decoration:none;min-width:48px}
 .scan-resource>a:hover,.research-source>a:hover{background:var(--cyan-soft)}
 @media(max-width:650px){.external-resource-grid,.scan-resource-list,.research-source-list{grid-template-columns:1fr}}
+
+/* Final daily step: reduce weekly lists into actionable focus lists. */
+.watchlist-flow{display:grid;grid-template-columns:1fr 34px .82fr 34px 1fr;gap:10px;align-items:stretch}
+.watchlist-stage-group{display:flex;flex-direction:column;gap:8px}
+.watchlist-stage-group>button{min-height:66px;padding:10px 11px;border:1px solid var(--line);border-radius:12px;background:#07111d;color:var(--text);display:grid;grid-template-columns:1fr auto auto;gap:9px;align-items:center;text-align:left;cursor:pointer}
+.watchlist-stage-group>button:hover{border-color:#4c6877;background:#0c1b29}
+.watchlist-stage-group>button span{display:flex;flex-direction:column;gap:4px}.watchlist-stage-group>button strong{font-size:11px}.watchlist-stage-group>button small{font-size:8px;color:var(--muted);line-height:1.35}
+.watchlist-stage-group>button b{min-width:27px;height:27px;padding:0 7px;border-radius:14px;background:#102936;color:var(--cyan-bright);display:grid;place-items:center;font-size:10px}.watchlist-stage-group>button svg{color:#708b99}
+.flow-arrow{display:grid;place-items:center;color:var(--cyan-bright);padding-top:24px}.watchlist-step>.microcopy{margin:15px 2px}.finish-routine:disabled{opacity:.4;cursor:not-allowed;box-shadow:none}
+@media(max-width:650px){.watchlist-flow{grid-template-columns:1fr}.flow-arrow{height:24px;padding:0;transform:rotate(90deg)}.watchlist-stage-group>button{min-height:62px}}

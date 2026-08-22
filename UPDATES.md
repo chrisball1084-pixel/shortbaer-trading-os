@@ -1,6 +1,6 @@
 # ShortBär Trading App – Änderungsdokument
 
-Stand: 2. August 2026
+Stand: 22. August 2026
 
 Dieses Dokument führt die vom Nutzer ursprünglich in Notion gepflegte Notiz
 „ShortBär Trading App Updates“ im Projekt nachvollziehbar fort.
@@ -16,11 +16,18 @@ Dieses Dokument führt die vom Nutzer ursprünglich in Notion gepflegte Notiz
 - X-Research-Accounts als öffnende Links mit getrennten lokalen Erledigt-Haken
 - Listenstruktur erweitert auf:
   - Stock List
+  - Bulls Nord
+  - Stalkers List
+  - Fast Ready
   - Watchlist Long
   - Watchlist Short
   - Top Dogs
   - Focus Long
   - Focus Short
+- Daily Routine um den abschließenden Watchlisten-Prozess ergänzt:
+  - Bulls Nord und Stalkers List als Ausgangslisten
+  - Verdichtung in Fast Ready
+  - Auswahl der konkreten Setups für Focus Long und Focus Short
 - Scan Inbox kann Ticker direkt einer dieser Listen und der passenden Richtung zuordnen
 - defensive Migration bestehender `watch`- und `focus`-Einträge anhand ihrer Richtung
 

@@ -1,10 +1,10 @@
 export type TrafficLight = "green" | "yellow" | "red";
 export type Direction = "Long" | "Short";
-export type CandidateList = "stock" | "watch-long" | "watch-short" | "top-dogs" | "focus-long" | "focus-short";
+export type CandidateList = "stock" | "bulls-nord" | "stalkers" | "fast-ready" | "watch-long" | "watch-short" | "top-dogs" | "focus-long" | "focus-short";
 export type CandidateStatus = "aktiv" | "extended" | "Basisbildung" | "Trigger nahe" | "ausgeschlossen";
 export type PricePosition = "above" | "below" | "at";
 export type MaDirection = "rising" | "flat" | "falling";
-export type RoutineSection = "events" | "indices" | "breadth" | "leadership" | "scans" | "research" | "decision";
+export type RoutineSection = "events" | "indices" | "breadth" | "leadership" | "scans" | "research" | "decision" | "watchlists";
 export type EventKey = "fomc" | "rates" | "cpi" | "ppi" | "earnings" | "none";
 export type BreakoutQuality = "likely" | "selective" | "unlikely" | "unclear";
 
@@ -48,7 +48,7 @@ export interface AppData { market: MarketAnalysis; candidates: Candidate[]; jour
 
 export const SOURCES = ["eigener TC2000-Scan", "TradingView", "Gapper", "Lone Stock Trader", "Jeff Sun", "TML Trader", "MoeTrading", "Will Hunting", "Ariel Hernandez", "sonstiges FinTwit"] as const;
 export const SETUPS = ["30-Minuten Opening Range Breakout", "Moving-Average Reclaim / Pullback", "Monday High / Monday Low Sweep", "6/20 Entry", "Swing Breakout", "Pullback zum 20-Tage-Moving-Average"] as const;
-export const ROUTINE_SECTIONS: RoutineSection[] = ["events", "indices", "breadth", "leadership", "scans", "research", "decision"];
+export const ROUTINE_SECTIONS: RoutineSection[] = ["events", "indices", "breadth", "leadership", "scans", "research", "decision", "watchlists"];
 export const SECTOR_ETFS = [
   { ticker:"XLC", label:"Communication" }, { ticker:"XLY", label:"Consumer Cyclical" },
   { ticker:"XLP", label:"Consumer Defensive" }, { ticker:"XLE", label:"Energy" },

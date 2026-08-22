@@ -12,7 +12,7 @@ export const seedData: AppData = {
     },
     plus4Prev:null, minus4Prev:null, above20:null, above50:null,
     leadingEtfs:[], scansChecked:[], researchChecked:[], breakoutQuality:"unclear",
-    sectionsCompleted: { events:false, indices:false, breadth:false, leadership:false, scans:false, research:false, decision:false }
+    sectionsCompleted: { events:false, indices:false, breadth:false, leadership:false, scans:false, research:false, decision:false, watchlists:false }
   },
   candidates: [
     { id:"demo-nvda", ticker:"NVDA", company:"NVIDIA Corp.", direction:"Long", list:"focus-long", topDog:true, shortLeader:false, status:"Trigger nahe", sector:"Technology", group:"Semiconductors", theme:"AI Infrastructure", setup:"30-Minuten Opening Range Breakout", source:"eigener TC2000-Scan", fundamentals:"DEMO – Fundamentals vor Trade prüfen", earningsDate:"", trigger:146.5, entry:null, stop:null, tradingViewUrl:"https://www.tradingview.com/chart/?symbol=NASDAQ%3ANVDA", note:"DEMO – nur Workflow-Beispiel", demo:true },

@@ -1,6 +1,6 @@
 # MVP-Status
 
-Stand: 2. August 2026
+Stand: 22. August 2026
 
 ## Fertig
 
@@ -11,13 +11,14 @@ Stand: 2. August 2026
 - Lokale Persistenz ohne Login und ohne Server
 - Klar gekennzeichnete Seed-/Demodaten
 - Situational-Awareness-Eingabe inklusive manueller Marktampel
-- Daily-Coach-Überarbeitung mit sechs geführten, einzeln abschließbaren Schritten
+- Daily-Coach-Überarbeitung mit acht geführten, einzeln abschließbaren Schritten
 - Separate Kurslage und MA-Richtung für SPY und QQQ an 10-SMA, 20-EMA und 50-SMA
 - Event-Checkboxen, Research-Routine und kompakte Sektor-ETF-Leadership-Auswahl
 - Marktbreite als +4-%-Breakouts / −4-%-Breakdowns des Vortags sowie vorläufige 20-/50-Tage-Partizipation
 - Sofortige lokale Speicherung und Migration des bisherigen lokalen Datenmodells
-- Kandidaten-CRUD mit Stock List, Watchlist, Focus List und geforderten Kennzeichnungen
-- Scan-Inbox mit flexibler Eingabe, Deduplizierung, Quelle, Triage, Top Dog und TradingView-Text-Export
+- Kandidaten-CRUD mit Bulls Nord, Stalkers, Fast Ready, Long-/Short-Watchlists, Top Dogs und Focus Lists
+- Abschließender Daily-Prozess Bulls Nord/Stalkers → Fast Ready → Focus List
+- Scan-Inbox mit flexibler Eingabe, Deduplizierung, Quelle, Triage in alle Prozesslisten, Top Dog und TradingView-Text-Export
 - ORB-Long-Rechner inklusive Stop-Tranchen, ADR-Prüfung und risikobasierter Stückzahl
 - Journal-Erfassung mit automatischem P&L, Ergebnis in R und Prozess-/Ergebnis-Bewertung
 - Playbook-Platzhalter für alle sechs Setups
