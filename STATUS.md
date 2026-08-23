@@ -1,6 +1,6 @@
 # MVP-Status
 
-Stand: 22. August 2026
+Stand: 23. August 2026
 
 ## Fertig
 
@@ -10,14 +10,14 @@ Stand: 22. August 2026
 - Installierbare PWA-Grundlage: Manifest, Icons, Standalone-Metadaten und Service Worker
 - Lokale Persistenz ohne Login und ohne Server
 - Klar gekennzeichnete Seed-/Demodaten
-- Situational-Awareness-Eingabe inklusive manueller Marktampel
+- Situational-Awareness-Eingabe inklusive manueller, fünfstufiger Marktampel mit Vortagsstand
 - Daily-Coach-Überarbeitung mit acht geführten, einzeln abschließbaren Schritten
 - Separate Kurslage und MA-Richtung für SPY und QQQ an 10-SMA, 20-EMA und 50-SMA
 - Event-Checkboxen, Research-Routine und kompakte Sektor-ETF-Leadership-Auswahl
-- Marktbreite als +4-%-Breakouts / −4-%-Breakdowns des Vortags sowie vorläufige 20-/50-Tage-Partizipation
+- Marktmonitor mit +4-%-Breakouts / −4-%-Breakdowns des Vortags sowie vorläufige 20-/50-Tage-Partizipation
 - Sofortige lokale Speicherung und Migration des bisherigen lokalen Datenmodells
-- Kandidaten-CRUD mit Bulls Nord, Stalkers, Fast Ready, Long-/Short-Watchlists, Top Dogs und Focus Lists
-- Abschließender Daily-Prozess Bulls Nord/Stalkers → Fast Ready → Focus List
+- Kandidaten-CRUD mit BullSnort, Stalkers, Fast Ready, Long-/Short-Watchlists, Top Dogs und Focus Lists
+- Abschließender Daily-Prozess BullSnort/Stalkers → Fast Ready → Focus List
 - Scan-Inbox mit flexibler Eingabe, Deduplizierung, Quelle, Triage in alle Prozesslisten, Top Dog und TradingView-Text-Export
 - ORB-Long-Rechner inklusive Stop-Tranchen, ADR-Prüfung und risikobasierter Stückzahl
 - Journal-Erfassung mit automatischem P&L, Ergebnis in R und Prozess-/Ergebnis-Bewertung
@@ -30,7 +30,7 @@ Stand: 22. August 2026
 
 - `lint`: bestanden
 - `typecheck`: bestanden
-- `test`: 4/4 bestanden
+- `test`: 14/14 bestanden
 - `build`: bestanden (statisch prerenderbar)
 
 ## Nicht fertig / bewusst außerhalb des MVP
@@ -41,7 +41,7 @@ Stand: 22. August 2026
 - Short-ORB-Logik
 - Journal-Screenshot-Speicherung
 - Vollständige Playbook-Inhalte und Beispielbibliothek
-- Historie abgeschlossener Daily Routines
+- Vollständige Historie abgeschlossener Daily Routines (nur die Ampel wird gesichert)
 - Automatischer Import des Jeff-Sun-RS-Sheets oder von Marktbreitedaten
 - Cloud-Synchronisation, Login und Mehrbenutzerbetrieb
 - Push-Benachrichtigungen

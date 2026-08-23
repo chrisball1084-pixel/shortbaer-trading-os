@@ -11,7 +11,7 @@ Dies ist der erste funktionierende MVP. Er führt **keine Orders aus**, verbinde
 ## Funktionen
 
 - **Heute:** Daily-Coach-Dashboard mit persönlicher Tagesansprache, Fortschritt, sechs Prozessschritten, Marktmodus sowie Focus Long und Focus Short.
-- **Situational Awareness:** geführte Daily Routine mit Eventauswahl, separater SPY-/QQQ-MA-Matrix, korrekt benannter Vortags-Marktbreite, ETF-Leadership, Research-Checks und manueller Marktentscheidung.
+- **Situational Awareness:** geführte Daily Routine mit Eventauswahl, separater SPY-/QQQ-MA-Matrix, Marktmonitor des Vortags, ETF-Leadership, Research-Checks und manueller Marktentscheidung.
 - **Kandidaten:** Stock List, Watchlist und Focus List; Long/Short, Top Dog, Short Leader, Status, Setup, Trigger und Research-Felder.
 - **Scan Inbox:** Copy-and-paste mit Kommas, Leerzeichen oder Zeilenumbrüchen, Bereinigung, Deduplizierung, schnelle Triage und TradingView-Text-Export.
 - **ORB Assistant:** Long-Setup-Check, 66-%-ADR-Grenze, drei Stop-Tranchen, gewichtetes Risiko, Stückzahlen und Gesamtrisiko.
@@ -75,7 +75,7 @@ Die App speichert Daten nur im aktuell verwendeten Browser. Browserdaten zu lös
 ## Bekannte Grenzen
 
 - Keine echte Markt-, Earnings- oder Volumendaten; Angaben werden manuell gepflegt.
-- Die Daily Routine speichert aktuell nur den heutigen Zustand, noch keine historische Zeitreihe.
+- Die Daily Routine sichert beim Tageswechsel nur die Ampel als Momentaufnahme, nicht die vollständige Analyse.
 - Die 20-/50-Tage-Breadth-Felder und das Sektor-ETF-Universum bleiben bis zum Abgleich mit dem originalen Jeff-Sun-Sheet vorläufig.
 - Keine IBKR-, TC2000-, TradingView- oder X-Integration.
 - Nur Long-ORB-Berechnung; Short-ORB-Regeln sind noch nicht definiert.

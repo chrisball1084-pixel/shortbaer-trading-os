@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import "./routine.css";
+import "./updates.css";
 import { StoreProvider } from "@/lib/store";
 import { PwaRegister } from "@/components/pwa-register";
 

@@ -1,0 +1,118 @@
+/* Ergänzungen aus dem Notion-Änderungsdokument: fünfstufige Ampel, Kopfzeile, Ankersprünge. */
+
+:root{
+  --light-deep-green:#0fbf87;
+  --light-green:#37d6ac;
+  --light-yellow:#ffcc66;
+  --light-red:#ff8a7a;
+  --light-deep-red:#ff5065;
+  --header-height:0px;
+}
+.deep-green{--light:var(--light-deep-green)}
+.green{--light:var(--light-green)}
+.yellow{--light:var(--light-yellow)}
+.red{--light:var(--light-red)}
+.deep-red{--light:var(--light-deep-red)}
+
+/* --- Kopfzeile ------------------------------------------------------------ */
+
+.brand-mark{border-radius:12px;flex:none;box-shadow:0 0 28px rgba(19,200,239,.13)}
+.mobile-header .brand{border:0;background:transparent;padding:0;color:inherit;text-align:left;cursor:pointer}
+
+/* Ersetzt den erklärungslosen LOCAL-Chip durch den aktuellen Marktmodus. */
+.light-chip{
+  display:inline-flex;align-items:center;gap:8px;min-height:38px;padding:0 13px;
+  border:1px solid var(--line-strong);border-radius:20px;background:#07111d;
+  color:var(--light,var(--muted));font-size:11px;font-weight:800;letter-spacing:.06em;
+  text-transform:uppercase;white-space:nowrap;cursor:pointer
+}
+.light-chip small{color:var(--muted);font-size:9px;font-weight:700;text-transform:none;letter-spacing:0}
+.light-dot{width:10px;height:10px;border-radius:50%;background:var(--light,var(--muted));box-shadow:0 0 12px var(--light,transparent);flex:none}
+.light-dot.large{width:20px;height:20px}
+
+/* --- Marktampel auf der Startseite ---------------------------------------- */
+
+.light-hero{
+  display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;margin-bottom:18px;
+  color:var(--light);border-color:color-mix(in srgb,var(--light) 34%,var(--line));
+  background:linear-gradient(145deg,color-mix(in srgb,var(--light) 9%,#0e1c2c),#081420)
+}
+.light-hero-main{display:flex;gap:16px;align-items:center;min-width:0}
+.light-hero-main h2{margin:0;font-family:var(--font-display);font-size:clamp(20px,3.4vw,28px);letter-spacing:-.02em;color:var(--text)}
+.light-hero-main p{margin:6px 0 0;color:var(--muted);font-size:12px;line-height:1.5}
+.light-hero-side{display:flex;flex-direction:column;gap:10px;align-items:stretch;min-width:190px}
+.light-scale-mini{display:grid;grid-template-columns:repeat(5,1fr);gap:4px}
+.light-scale-mini span{height:7px;border-radius:5px;background:var(--light);opacity:.22}
+.light-scale-mini span.active{opacity:1;box-shadow:0 0 12px var(--light)}
+
+/* --- Fünfstufige Auswahl in der Entscheidung ------------------------------ */
+
+.light-scale{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:20px}
+.light-scale button{
+  display:flex;flex-direction:column;gap:5px;align-items:flex-start;text-align:left;
+  min-height:118px;padding:13px;border:1px solid var(--line);border-radius:12px;
+  background:#07111d;color:var(--muted);cursor:pointer
+}
+.light-scale button strong{font-size:13px;color:var(--text)}
+.light-scale button em{font-style:normal;font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--light)}
+.light-scale button small{font-size:9px;line-height:1.4;color:var(--muted)}
+.light-scale button.selected{
+  border-color:var(--light);
+  background:color-mix(in srgb,var(--light) 11%,#07111d);
+  box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--light) 32%,transparent)
+}
+.decision-secondary{margin-bottom:4px}
+
+/* --- ARKK/QQQ-Verhältnis -------------------------------------------------- */
+
+.ratio-check{margin-top:14px;padding:15px;border:1px solid var(--line);border-radius:14px;background:#07111d}
+.ratio-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}
+.ratio-head strong{font-size:15px}
+.ratio-head small{display:block;color:var(--muted);font-size:10px;margin-top:3px}
+.ratio-choice{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.ratio-choice button{
+  min-height:58px;padding:9px 11px;border:1px solid var(--line);border-radius:11px;
+  background:#0a1523;color:var(--text);text-align:left;cursor:pointer
+}
+.ratio-choice button small{display:block;color:var(--muted);font-size:9px;margin-top:4px}
+.ratio-choice button.selected.leading{border-color:var(--light-green);background:rgba(55,214,172,.11)}
+.ratio-choice button.selected.neutral{border-color:var(--light-yellow);background:rgba(255,204,102,.11)}
+.ratio-choice button.selected.lagging{border-color:var(--light-deep-red);background:rgba(255,80,101,.11)}
+
+/* --- Leadership: RS-App und Gruppenauswahl -------------------------------- */
+
+.primary-resource{margin-bottom:10px;border-color:color-mix(in srgb,var(--lime) 40%,var(--line));background:var(--cyan-soft)}
+.group-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(72px,1fr));gap:7px;margin-bottom:12px}
+.group-grid button{
+  min-height:42px;border:1px solid var(--line);border-radius:10px;background:#07111d;
+  color:var(--text);font-size:11px;font-weight:800;cursor:pointer
+}
+.group-grid button.selected{border-color:var(--lime);background:var(--cyan-soft);color:var(--cyan-bright)}
+.group-entry{display:flex;gap:8px;align-items:flex-start;margin-bottom:12px}
+.chip-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.chip{
+  display:inline-flex;align-items:center;gap:6px;min-height:32px;padding:0 10px;
+  border:1px solid var(--lime);border-radius:20px;background:var(--cyan-soft);
+  color:var(--cyan-bright);font-size:11px;font-weight:800;cursor:pointer
+}
+
+/* --- Ankersprünge und klebende Leisten ------------------------------------ */
+
+.coach-step{scroll-margin-top:calc(var(--header-height) + 74px)}
+.routine-mini-nav{top:var(--header-height);background:var(--bg);padding-top:8px;padding-bottom:12px}
+
+@media(max-width:900px){
+  :root{--header-height:calc(68px + env(safe-area-inset-top))}
+  .light-hero{grid-template-columns:1fr;gap:16px}
+  .light-hero-side{min-width:0}
+  .light-scale{grid-template-columns:1fr 1fr}
+  .light-scale button{min-height:100px}
+  .ratio-choice{grid-template-columns:1fr}
+  .ratio-choice button{min-height:48px}
+}
+@media(max-width:600px){
+  .light-scale{grid-template-columns:1fr}
+  .light-scale button{min-height:0;flex-direction:row;flex-wrap:wrap;align-items:center;gap:4px 9px}
+  .light-scale button small{width:100%}
+  .external-resource-grid{grid-template-columns:1fr}
+}

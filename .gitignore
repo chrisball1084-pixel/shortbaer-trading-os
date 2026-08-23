@@ -8,3 +8,4 @@ out/
 .dev-server*.log
 *-preview.png
 AGENTS.md
+.claude/
