@@ -1,7 +1,7 @@
 "use client";
 import type { ReactNode } from "react";
 
-/** Läuft die App als installierte PWA? Dort öffnet ein normaler Link sonst die eingebettete Vorschau. */
+/** Läuft die App als installierte PWA vom Home-Bildschirm? */
 function isStandalone(): boolean {
   if (typeof window === "undefined") return false;
   const iosStandalone = (window.navigator as Navigator & { standalone?: boolean }).standalone === true;
@@ -9,8 +9,18 @@ function isStandalone(): boolean {
 }
 
 /**
- * Finviz, TradingView und X sollen im echten Browser landen, nicht im In-App-Viewer.
- * Im Browser bleibt es ein gewöhnlicher Link, damit Mittelklick und „in neuem Tab öffnen“ funktionieren.
+ * Finviz, TradingView, X und die RS-App sollen im System-Browser landen.
+ *
+ * `target="_blank"` erreicht das nicht: iOS öffnet daraus seit 16.4 eine
+ * eingebettete Vorschau innerhalb der PWA. Eine Top-Level-Navigation auf eine
+ * Adresse außerhalb des Manifest-Scope behandeln iOS und Android dagegen als
+ * „Verlassen der App" und übergeben sie an den Browser.
+ *
+ * Das ist das Maximum, das die Plattform hergibt – eine API, die den
+ * System-Browser erzwingt, existiert im Web nicht.
+ *
+ * Im normalen Browser bleibt es ein gewöhnlicher Link, damit Mittelklick,
+ * „in neuem Tab öffnen" und Langdrücken weiter funktionieren.
  */
 export function ExternalAnchor({ href, children, className, title, ariaLabel }: {
   href: string;
@@ -29,8 +39,9 @@ export function ExternalAnchor({ href, children, className, title, ariaLabel }: 
     onClick={event => {
       if (!isStandalone()) return;
       event.preventDefault();
-      const opened = window.open(href, "_blank", "noopener,noreferrer");
-      if (!opened) window.location.href = href;
+      // Der Tagesstand liegt in localStorage: Selbst wenn eine Plattform hier
+      // doch im App-Fenster navigiert, ist beim nächsten Start alles vorhanden.
+      window.location.assign(href);
     }}
   >{children}</a>;
 }
