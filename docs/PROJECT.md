@@ -12,6 +12,7 @@ ShortBär Trading OS ist ein persönliches, mobiles Workflow- und Journal-System
 - `STATUS.md` ist ein zeitgebundener Status-Snapshot und darf veralten.
 - `UPDATES.md` ist Änderungs-/Release-Historie, nicht primäre Agent-Instruktion.
 - Historische Notion-Abschnitte und lange Changelogs nur lesen, wenn sie für die aktuelle Aufgabe relevant sind.
+- Notion ist **keine Langzeithistorie**; Git/GitHub sowie `STATUS.md`/`UPDATES.md` übernehmen diese Rolle.
 
 ## Architektur
 
@@ -110,6 +111,14 @@ Das Projekt wird statisch für GitHub Pages gebaut. Änderungen an `next.config.
 - `AGENTS.md` — kurze Codex-Arbeitsanweisung
 - `CLAUDE.md` — kurze Claude-Code-Arbeitsanweisung
 
+## Notion Retention / Housekeeping
+
+- `CURRENT STATE` aktualisieren/ersetzen statt Statuschroniken anzuhängen.
+- Verarbeitete `INBOX`-Punkte und erledigte `OPEN`-Punkte entfernen.
+- `PRODUCT DECISIONS` nur für dauerhaft relevantes Produktwissen verwenden.
+- `CHANGELOG` auf **maximal 10 relevante Einträge bzw. ungefähr 60 Tage** begrenzen.
+- Erledigte Featurelisten, Rohnotizen und Implementierungsprotokolle nicht in Notion archivieren; dafür existieren GitHub, `STATUS.md` und `UPDATES.md`.
+
 ## Notion-Sync-Workflow
 
 Der Befehl **„Notion Sync durchführen“** bedeutet:
@@ -122,5 +131,5 @@ Der Befehl **„Notion Sync durchführen“** bedeutet:
 6. Eindeutig definierte Änderungen möglichst klein implementieren; keine unnötigen Refactors.
 7. `pnpm lint`, `pnpm typecheck`, `pnpm test` und `pnpm build` bzw. die für die Änderung relevanten Prüfungen ausführen.
 8. Dieses Dokument nur aktualisieren, wenn sich dauerhafte Architektur, Datenmodell, Kernlogik, Plattformgrenzen, Test- oder Deploymentregeln ändern.
-9. Notion aufräumen: Current State aktualisieren, erledigte Punkte abschließen, Entscheidungsbedarf nach `WAITING FOR ME`, Changelog kompakt ergänzen.
+9. Notion gemäß Retention-Regel aufräumen und kompakt aktualisieren.
 10. Abschließend Änderungen, Tests und offene Nutzerentscheidungen kurz berichten.
