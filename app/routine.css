@@ -35,13 +35,14 @@
 .external-resource:hover{border-color:var(--lime);background:var(--cyan-soft)}
 .external-resource span{display:flex;flex-direction:column;gap:4px}.external-resource small{color:var(--muted);font-size:9px}.external-resource svg{color:var(--cyan-bright);flex:0 0 auto}
 .scan-resource-list,.research-source-list{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.scan-resource,.research-source{min-height:60px;border:1px solid var(--line);border-radius:11px;background:#07111d;display:grid;grid-template-columns:1fr 48px;overflow:hidden}
+.scan-resource,.research-source{min-height:60px;border:1px solid var(--line);border-radius:11px;background:#07111d;display:grid;grid-template-columns:1fr 48px;overflow:hidden}.scan-resource{grid-template-columns:minmax(0,1fr) 48px minmax(104px,auto)}
 .scan-resource.selected,.research-source.selected{border-color:var(--lime);background:var(--cyan-soft)}
 .scan-resource>button,.research-source>button{position:relative;min-height:58px;border:0;background:transparent;color:var(--text);padding:9px 9px 9px 43px;text-align:left;display:flex;align-items:center;cursor:pointer}
 .scan-resource>button>span:last-child,.research-source>button>span:last-child{display:flex;flex-direction:column;gap:3px}
 .scan-resource strong,.research-source strong{font-size:11px}.scan-resource small,.research-source small{font-size:8px;color:var(--muted)}
 .scan-resource>a,.research-source>a{display:grid;place-items:center;border-left:1px solid var(--line);color:var(--cyan-bright);text-decoration:none;min-width:48px}
 .scan-resource>a:hover,.research-source>a:hover{background:var(--cyan-soft)}
+.scan-resource>.copy-scan-link{position:static;min-height:58px;padding:7px 10px;border-left:1px solid var(--line);background:transparent;color:var(--muted);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-align:center;font-size:8px;font-weight:750}.scan-resource>.copy-scan-link:hover{background:var(--cyan-soft);color:var(--cyan-bright)}.scan-resource>.copy-scan-link svg{flex:0 0 auto}.copy-confirmation{margin:10px 2px 0;color:var(--green);display:flex;align-items:center;gap:7px;font-size:10px;line-height:1.4}
 @media(max-width:650px){.external-resource-grid,.scan-resource-list,.research-source-list{grid-template-columns:1fr}}
 
 /* Final daily step: reduce weekly lists into actionable focus lists. */

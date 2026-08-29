@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { BarChart3, CalendarDays, Check, ChevronRight, CircleCheck, ExternalLink, Gauge, LineChart, ListChecks, Radar, SearchCheck, ShieldAlert, Sparkles, X } from "lucide-react";
+import { BarChart3, CalendarDays, Check, ChevronRight, CircleCheck, Copy, ExternalLink, Gauge, LineChart, ListChecks, Radar, SearchCheck, ShieldAlert, Sparkles, X } from "lucide-react";
 import { useStore } from "@/lib/store";
 import { TRAFFIC_LIGHTS } from "@/lib/market";
 import { ARKK_QQQ_LINK, EVENT_CALENDAR_LINKS, FINVIZ_SCANS, GROUP_ETFS, INDEX_LINKS, LEADERSHIP_LINKS, MAX_LEADING_GROUPS, MAX_LEADING_SECTORS, RESEARCH_SOURCES, ROUTINE_SECTIONS, SECTOR_ETFS, SKYWALKER_RS_APP, type BreakoutQuality, type CandidateList, type EventKey, type MaDirection, type MarketAnalysis, type PricePosition, type RelativeTrend, type RoutineSection } from "@/lib/types";
@@ -32,6 +32,7 @@ export function AwarenessView({target,onOpenList}:{target?:SectionTarget;onOpenL
  // Der Store ist die einzige Quelle der Wahrheit; ein lokaler Formularzustand würde nur veralten.
  const form=data.market;
  const [groupDraft,setGroupDraft]=useState("");
+ const [copiedScan,setCopiedScan]=useState<string|null>(null);
  const completed=ROUTINE_SECTIONS.filter(key=>form.sectionsCompleted[key]).length;
 
  // Wer aus „Heute“ auf einen Schritt tippt, soll bei genau diesem Schritt landen – nicht ganz oben.
@@ -63,6 +64,25 @@ export function AwarenessView({target,onOpenList}:{target?:SectionTarget;onOpenL
   if(!ticker)return;
   if(form.leadingGroups.includes(ticker)){set("leadingGroups",form.leadingGroups.filter(x=>x!==ticker));return}
   set("leadingGroups",[...form.leadingGroups,ticker]);
+ };
+ const copyScanUrl=async(id:string,url:string)=>{
+  let copied=false;
+  try{
+   await navigator.clipboard.writeText(url);
+   copied=true;
+  }catch{
+   const field=document.createElement("textarea");
+   field.value=url;
+   field.setAttribute("readonly","");
+   field.style.position="fixed";
+   field.style.opacity="0";
+   document.body.appendChild(field);
+   field.select();
+   copied=document.execCommand("copy");
+   field.remove();
+  }
+  if(copied)setCopiedScan(id);
+  else window.prompt("Finviz-Adresse kopieren:",url);
  };
 
  return <div className="page coach-routine-page">
@@ -135,7 +155,9 @@ export function AwarenessView({target,onOpenList}:{target?:SectionTarget;onOpenL
     <div className="scan-resource-list">{FINVIZ_SCANS.map(scan=><div className={form.scansChecked.includes(scan.id)?"scan-resource selected":"scan-resource"} key={scan.id}>
      <button aria-label={`${scan.label} abhaken`} onClick={()=>toggleList("scansChecked",scan.id)}><span className="option-check">{form.scansChecked.includes(scan.id)&&<Check size={14}/>}</span><span><strong>{scan.label}</strong><small>{scan.hint}</small></span></button>
      <ExternalAnchor href={scan.url} ariaLabel={`${scan.label} auf Finviz öffnen`}><ExternalLink size={17}/></ExternalAnchor>
+     <button className="copy-scan-link" onClick={()=>copyScanUrl(scan.id,scan.url)} aria-label={`${scan.label}: Finviz-Adresse kopieren`}><Copy size={14}/><span>{copiedScan===scan.id?"Kopiert":"Adresse kopieren"}</span></button>
     </div>)}</div>
+    {copiedScan&&<p className="copy-confirmation" role="status"><Check size={15}/> Adresse kopiert. Jetzt Safari öffnen und in die Adresszeile einfügen.</p>}
     <StepComplete done={form.sectionsCompleted.scans} onClick={()=>complete("scans")}/>
    </Card>
 
